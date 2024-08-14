@@ -188,3 +188,10 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
+-- telescope
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
+map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
