@@ -213,3 +213,6 @@ end  -- ここが `end` の終了部分
 
 -- <leader>e で診断メッセージをコピーするキーを追加
 vim.keymap.set('n', '<leader>e', copy_diagnostic_message, { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('v', '<Tab>', '>gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
