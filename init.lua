@@ -7,3 +7,5 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#00ff00", bold = true }) -- Make 
 
 -- Disable copilot in defaults
 vim.cmd(":Copilot disable")
+
+vim.cmd("set conceallevel=0")
