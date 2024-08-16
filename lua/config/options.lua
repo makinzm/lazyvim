@@ -1,9 +1,25 @@
 -- This file is automatically loaded by plugins.core
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
--- LazyVim auto format
-vim.g.autoformat = true
+-- Disable auto-format globally
+vim.g.autoformat = false
+
+-- Enable auto-format only for Lua files
+vim.cmd([[
+  augroup AutoFormatLua
+    autocmd!
+    autocmd FileType lua lua vim.g.autoformat = true
+  augroup END
+]])
+
+-- `--fix` causes bug because read conflict
+-- Set up an auto-command for Python files to use Ruff for formatting
+-- vim.cmd([[
+--   augroup AutoFormatPython
+--     autocmd!
+--     autocmd FileType python lua vim.cmd('autocmd BufWritePre <buffer> !ruff check --fix %')
+--   augroup END
+-- ]])
 
 -- LazyVim picker to use.
 -- Can be one of: telescope, fzf
@@ -26,6 +42,7 @@ vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.g.lazygit_config = true
 
 -- Options for the LazyVim statuscolumn
+vim.g.maplocalleader = "\\"
 vim.g.lazyvim_statuscolumn = {
   folds_open = false, -- show fold sign when fold is open
   folds_githl = false, -- highlight fold sign with git sign color
