@@ -195,3 +195,21 @@ map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+
+-- <leader>e のマッピングを削除
+vim.keymap.del('n', '<leader>e')
+
+-- 診断メッセージをコピーする関数を定義
+local function copy_diagnostic_message()
+  local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
+  if diagnostics and diagnostics[1] then
+    -- メッセージをクリップボードにコピー
+    vim.fn.setreg('+', diagnostics[1].message)
+    print("Diagnostic message copied: " .. diagnostics[1].message)
+  else
+    print("No diagnostic message on this line.")
+  end
+end  -- ここが `end` の終了部分
+
+-- <leader>e で診断メッセージをコピーするキーを追加
+vim.keymap.set('n', '<leader>e', copy_diagnostic_message, { noremap = true, silent = true })
