@@ -68,6 +68,7 @@ return {
         ["l"] = "open",
         ["h"] = "close_node",
         ["<space>"] = "none",
+        ["y"] = "none",
         ["Y"] = {
           function(state)
             local node = state.tree:get_node()
