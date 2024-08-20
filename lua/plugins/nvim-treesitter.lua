@@ -50,6 +50,7 @@ return {
       "xml",
       "yaml",
       "rust",
+      "ron",
       "scala",
       "go",
       "dart",

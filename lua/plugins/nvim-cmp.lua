@@ -6,14 +6,30 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    {
+      "Saecki/crates.nvim",
+      event = { "BufRead Cargo.toml" },
+      opts = {
+        completion = {
+          cmp = { enabled = true },
+        },
+      },
+    },
   },
-  opts = function()
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
     local auto_select = false -- Disable automatic selection
 
-    return {
+    opts = opts or {}
+    opts.sources = opts.sources or {}
+
+    -- Add the crates source
+    table.insert(opts.sources, { name = "crates" })
+
+    return vim.tbl_deep_extend("force", opts, {
       auto_brackets = {}, -- configure any filetype to auto add brackets
       completion = {
         completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
@@ -64,7 +80,7 @@ return {
         },
       },
       sorting = defaults.sorting,
-    }
+    })
   end,
   main = "lazyvim.util.cmp",
 }
