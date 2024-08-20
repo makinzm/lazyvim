@@ -7,20 +7,12 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
   },
-  -- Not all LSP servers add brackets when completing a function.
-  -- To better deal with this, LazyVim adds a custom option to cmp,
-  -- that you can configure. For example:
-  --
-  -- ```lua
-  -- opts = {
-  --   auto_brackets = { "python" }
-  -- }
-  -- ```
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
-    local auto_select = true
+    local auto_select = false -- Disable automatic selection
+
     return {
       auto_brackets = {}, -- configure any filetype to auto add brackets
       completion = {
@@ -31,9 +23,9 @@ return {
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<CR>"] = LazyVim.cmp.confirm({ select = auto_select }),
-        ["<C-y>"] = LazyVim.cmp.confirm({ select = true }),
-        ["<S-CR>"] = LazyVim.cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Only confirm explicitly selected items
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<S-CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace }),
         ["<C-CR>"] = function(fallback)
           cmp.abort()
           fallback()
