@@ -7,7 +7,7 @@ return {
       local keymap = vim.keymap.set
       keymap(
         "i",
-        "<C-g>",
+        "<tab><tab>",
         'copilot#Accept("<CR>")',
         { silent = true, expr = true, script = true, replace_keycodes = false }
       )
