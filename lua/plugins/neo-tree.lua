@@ -62,6 +62,15 @@ return {
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_by_name = {
+          ".venv",
+          ".git",
+          "yarn.lock",
+          "pnp.cjs",
+        }
+      }
     },
     window = {
       mappings = {
