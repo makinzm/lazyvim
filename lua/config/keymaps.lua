@@ -219,3 +219,7 @@ vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true }
 
 map("n", "<leader>sv", "<C-w>v", { desc = "Split Window Vertically" })
 map("n", "<leader>sh", "<C-w>s", { desc = "Split Window Horizontally" })
+
+-- map jk when in insert mode to escape
+map("i", "jk", "<esc>", { desc = "jk to escape" })
+
