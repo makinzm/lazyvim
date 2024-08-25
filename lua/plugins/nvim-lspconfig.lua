@@ -29,6 +29,9 @@ return {
           },
         },
       },
+      -- docker
+      dockerls = {},
+      docker_compose_language_service = {},
       -- typescript
       tsserver = {
         enabled = false,

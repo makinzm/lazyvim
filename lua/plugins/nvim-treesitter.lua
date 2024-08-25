@@ -54,6 +54,7 @@ return {
       "scala",
       "go",
       "dart",
+      "dockerfile",
     },
     incremental_selection = {
       enable = true,
