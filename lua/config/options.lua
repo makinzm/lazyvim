@@ -141,3 +141,7 @@ end
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+-- when something is changed, automatically read it
+-- autoread
+vim.opt.autoread = true
