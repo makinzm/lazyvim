@@ -6,6 +6,6 @@ vim.api.nvim_set_hl(0, "LineNr", { fg = "#cccc00" }) -- Change to a bright color
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#00ff00", bold = true }) -- Make the current line number green and bold
 
 -- Disable copilot in defaults
-vim.cmd(":Copilot disable")
+-- vim.cmd(":Copilot disable")
 
 vim.cmd("set conceallevel=0")
