@@ -55,6 +55,8 @@ return {
       "go",
       "dart",
       "dockerfile",
+      "terraform",
+      "hcl",
     },
     incremental_selection = {
       enable = true,

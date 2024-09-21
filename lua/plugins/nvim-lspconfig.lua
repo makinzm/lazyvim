@@ -2,6 +2,8 @@ return {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
+      -- terraform
+      terraformls = {},
       -- python
       pyright = {
         filetypes = { "python" },
