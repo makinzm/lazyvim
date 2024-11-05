@@ -22,6 +22,10 @@ return {
               enable = true,
             },
           },
+          assist = {
+            importMergeBehavior = "last",
+            importPrefix = "by_self",
+          },
           -- Add clippy lints for Rust.
           checkOnSave = true,
           procMacro = {
