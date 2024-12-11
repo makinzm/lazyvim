@@ -50,4 +50,8 @@ require("lazy").setup({
       },
     },
   },
+  git = {
+    -- HTTPS を SSH に変換する形式を指定
+    url_format = "git@github.com:%s.git",
+  },
 })
