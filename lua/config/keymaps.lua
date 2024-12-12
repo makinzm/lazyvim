@@ -37,7 +37,7 @@ map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
+-- map("n", "<leader>bd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 -- Clear search with <esc>
@@ -115,25 +115,25 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- stylua: ignore start
 
 -- toggle options
-LazyVim.toggle.map("<leader>uf", LazyVim.toggle.format())
-LazyVim.toggle.map("<leader>uF", LazyVim.toggle.format(true))
-LazyVim.toggle.map("<leader>us", LazyVim.toggle("spell", { name = "Spelling" }))
-LazyVim.toggle.map("<leader>uw", LazyVim.toggle("wrap", { name = "Wrap" }))
-LazyVim.toggle.map("<leader>uL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
-LazyVim.toggle.map("<leader>ud", LazyVim.toggle.diagnostics)
-LazyVim.toggle.map("<leader>ul", LazyVim.toggle.number)
-LazyVim.toggle.map( "<leader>uc", LazyVim.toggle("conceallevel", { values = { 0, vim.o.conceallevel > 0 and vim.o.conceallevel or 2 } }))
-LazyVim.toggle.map("<leader>uT", LazyVim.toggle.treesitter)
-LazyVim.toggle.map("<leader>ub", LazyVim.toggle("background", { values = { "light", "dark" }, name = "Background" }))
-if vim.lsp.inlay_hint then
-  LazyVim.toggle.map("<leader>uh", LazyVim.toggle.inlay_hints)
-end
+-- LazyVim.toggle.map("<leader>uf", LazyVim.toggle.format())
+-- LazyVim.toggle.map("<leader>uF", LazyVim.toggle.format(true))
+-- LazyVim.toggle.map("<leader>us", LazyVim.toggle("spell", { name = "Spelling" }))
+-- LazyVim.toggle.map("<leader>uw", LazyVim.toggle("wrap", { name = "Wrap" }))
+-- LazyVim.toggle.map("<leader>uL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
+-- LazyVim.toggle.map("<leader>ud", LazyVim.toggle.diagnostics)
+-- LazyVim.toggle.map("<leader>ul", LazyVim.toggle.number)
+-- LazyVim.toggle.map( "<leader>uc", LazyVim.toggle("conceallevel", { values = { 0, vim.o.conceallevel > 0 and vim.o.conceallevel or 2 } }))
+-- LazyVim.toggle.map("<leader>uT", LazyVim.toggle.treesitter)
+-- LazyVim.toggle.map("<leader>ub", LazyVim.toggle("background", { values = { "light", "dark" }, name = "Background" }))
+-- if vim.lsp.inlay_hint then
+--   LazyVim.toggle.map("<leader>uh", LazyVim.toggle.inlay_hints)
+-- end
 
 -- lazygit
 map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
 map("n", "<leader>gG", function() LazyVim.lazygit() end, { desc = "Lazygit (cwd)" })
-map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
-map("n", "<leader>gB", LazyVim.lazygit.browse, { desc = "Git Browse" })
+-- map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
+-- map("n", "<leader>gB", LazyVim.lazygit.browse, { desc = "Git Browse" })
 
 map("n", "<leader>gf", function()
   local git_path = vim.api.nvim_buf_get_name(0)
