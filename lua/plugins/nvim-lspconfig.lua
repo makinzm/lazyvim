@@ -5,8 +5,13 @@ return {
       hls = function()
         return true
       end,
+      jdls = function()
+        return true
+      end,
     },
     servers = {
+      -- java
+      jdtls = {},
       -- terraform
       terraformls = {},
       -- python
